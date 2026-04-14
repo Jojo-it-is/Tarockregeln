@@ -1,0 +1,175 @@
+/* === Tarock Regelwerk === */
+
+body {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background: #fafafa;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #8B2232;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+h4 {
+  font-size: 0.95rem;
+  margin-top: 1.2rem;
+  color: #555;
+}
+
+a {
+  color: #8B2232;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+  padding: 0;
+}
+
+li {
+  margin: 0.3rem 0;
+}
+
+/* === Tabellen === */
+
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.8rem;
+  text-align: center;
+}
+
+th {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+tr.summe td {
+  font-weight: bold;
+  border-top: 2px solid #8B2232;
+  color: #8B2232;
+}
+
+/* === Aktiver Spieler (Bspspiel) === */
+
+tr.aktiv td {
+  font-weight: bold;
+  color: #8B2232;
+}
+
+/* === Schliessen-Button (Popup-Fenster) === */
+
+.close-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.3rem 1.2rem;
+  border: 1px solid #8B2232;
+  color: #8B2232;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.close-btn:hover {
+  background: #8B2232;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* === Layout mit Sidebar === */
+
+body.with-sidebar {
+  max-width: none;
+  padding: 0;
+}
+
+.layout {
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 130px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.9;
+  border-right: 1px solid #eee;
+  padding-right: 1rem;
+}
+
+.sidebar > a {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.sidebar hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 0.6rem 0;
+}
+
+.sidebar .bilder-label {
+  color: #555;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+.alpha-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.4rem 0;
+}
+
+.alpha-nav a,
+.alpha-nav .inactive {
+  width: 1.35rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.alpha-nav .inactive {
+  color: #ccc;
+}
+
+main {
+  flex: 1;
+  min-width: 0;
+}

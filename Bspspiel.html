@@ -1,0 +1,621 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" HREF="style.css">
+<TITLE>Ein komplettes Spiel</TITLE>
+</HEAD>
+<BODY>
+<!-- BACKGROUND="TaBg.jpg" --!>
+<H1>Ein Spiel</H1>
+<H3>Notation</H3>
+<TABLE WIDTH="100%">
+<TR><TD WIDTH="80%">
+Gespielt wird von rechts nach links. Das Blatt jedes Spielers wird in einer Tabelle wie der nebenstehenden unter seinem Namen dargestellt.
+In der Reihe sind die Karten der jeweiligen Farbe nach der Reihenfolge des Stechens angeschrieben, wobei folgende Abk&uuml;rzungen verwendet werden:
+<TABLE BORDER=1>
+<TR>
+<TD WIDTH=100>Gstie&szlig;</TD><TD WIDTH=20>G</TD>
+<TD WIDTH=100>K&ouml;nig</TD><TD WIDTH=20>K</TD>
+<TD WIDTH=100>Tarock</TD><TD WIDTH=20>Ta</TD>
+</TR><TR>
+<TD WIDTH=100>Mond</TD><TD WIDTH=20>M</TD>
+<TD WIDTH=100>Dame</TD><TD WIDTH=20>D</TD>
+<TD WIDTH=100>Herz</TD><TD WIDTH=20>He</TD>
+</TR><TR>
+<TD WIDTH=100>Pagat</TD><TD WIDTH=20>P</TD>
+<TD WIDTH=100>Reiter</TD><TD WIDTH=20>R</TD>
+<TD WIDTH=100>Pik</TD><TD WIDTH=20>Pi</TD>
+</TR><TR>
+<TD WIDTH=100></TD><TD WIDTH=20></TD>
+<TD WIDTH=100>Bube</TD><TD WIDTH=20>B</TD>
+<TD WIDTH=100>Karo</TD><TD WIDTH=20>Ka</TD>
+</TR><TR>
+<TD WIDTH=100></TD><TD WIDTH=20></TD>
+<TD WIDTH=100></TD><TD WIDTH=20></TD>
+<TD WIDTH=100>Treff</TD><TD WIDTH=20>Tr</TD>
+
+</TABLE>
+Zahlen sybolisieren je nach dem Tarock die keine Trullst&uuml;cke sind oder Glatzen. 
+W&auml;hrend des Spieles ist der Name des Auspielers in seiner Tabelle Rot
+ geschrieben, die gerade gespielten Karten werden als Pr&auml;fix die Abk&uuml;rzung ihrer Farbe erhalten. 
+</TD>
+<TD WIDTH="20%">
+<TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler<TD></TR>
+<TR><TD>Tarock:</TD><TD>****</TD></TR>
+<TR><TD>Herz:</TD><TD>****</TD></TR>
+<TR><TD>Pik:</TD><TD>****</TD></TR>
+<TR><TD>Caro:</TD><TD>****</TD></TR>
+<TR><TD>Kreuz:</TD><TD>****</TD></TR>
+</TABLE>
+</TD></TR></TABLE>
+
+<H2>Geben</H2>
+Nach dem Geben sind folgende Bl&auml;tter vorhanden:
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,20,16,14,8,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B,2,3,4</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,18,15,10,9,7,5,P</TD></TR>
+<TR><TD>Herz:</TD><TD>D,1</TD></TR>
+<TR><TD>Pik:</TD><TD>R</TD></TR>
+<TR><TD>Karo:</TD><TD>K</TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>17,13,12,4</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D,B</TD></TR>
+<TR><TD>Karo:</TD><TD>R,1</TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD>M,11,2</TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>K,10,9,7</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE> 
+<H2>Lizitation</H2>
+<TABLE BORDER=2>
+<TR><TD>Vorhand</TD><TD>Vorhand</TD><TD>0</TD></TR>
+<TR><TD>1.Spieler</TD><TD>Besserrufer</TD><TD>6</TD></TR>
+<TR><TD>2.Spieler</TD><TD>weiter</TD><TD>6</TD></TR>
+<TR><TD>Geber</TD><TD>weiter</TD><TD>6</TD></TR>
+<TR><TD>Vorhand</TD><TD>weiter</TD><TD>6</TD></TR>
+</TABLE>
+Spieler 1 f&uuml;hlt sich stark genug f&uuml;r einen Besserrufer, keiner der anderen Spieler will ein
+h&ouml;heres Spiel ansagen
+<H2>Rufen eines K&ouml;nigs</H2>
+Spieler 1 Ruft den Herzk&ouml;nig um, falls er im Talon liegt, zumindest die Herz als Schieberfarbe zu haben.
+<H2>Aufnehmen des Talons und Verlegen</H2>
+Vor die Wahl zwischen den Talonh&auml;lften
+<UL>
+<LI>Pi8,Tr9,TR8<br> und</LI>
+<LI>Ta6,He2,KaD</LI>
+</UL>
+nimmt Spieler 1 nat&uuml;rlich die zweite H&auml;lfte, das diese sowohl ein Tarock enth&auml;lt als auch
+besser zu seinen Farben pa&szlig;t. Hier die Bl&auml;tter nach dem Verlegen: Spieler eins hat durch das
+Verlegen von <B>PiR</B> und <B>HeD</B>, wobei er <B>KaD</B> im Talon belie&szlig;, sein Blatt auf zwei
+Farben reduziert. Er hat den K&ouml;nig der einen Farbe, sein Partner den der anderen.
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,20,16,14,8,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B,2,3,4</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,18,15,10,9,7,6,5,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>K</TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>17,13,12,4</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D,B</TD></TR>
+<TR><TD>Karo:</TD><TD>R,1</TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD>M,11,2</TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>K,10,9,7</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+</BODY>
+<H2>Spiel</H2>
+<H4>1.Stich</H4>
+
+<B>Ka4,KaK,Ka1,TM:</B>Vorhand spielt von seiner langen Karo aus, um wenn m&ouml;glich dem Spieler Tarock
+abzunehmen, w&auml;hrend er seine Tarock schont und sich die einzelenen Farben beh&auml;t um sie bei
+Bedarf zugeben zu k&ouml;nnen. Dadurch gubt er sich nat&uuml;rkich sofort als Gegener zu erkennen. Spieler
+1 mu&szlig; mit dem K&ouml;nig stechen, Spieler 2 gibt die Karo zu die weniger Punkte wert ist, da der
+Gegner den Stich macht. Der Geber sticht mit dem Mond ein, da er so wenig Tarock hat, da&szlig die Gefahr
+eines Mondfanges zu gro&szlig; ist.
+
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2> Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,20,16,14,8,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B,2,3</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,18,15,10,9,7,6,5,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>17,13,12,4</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D,B</TD></TR>
+<TR><TD>Karo:</TD><TD>R</TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD>11,2</TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>K,10,9,7</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>2.Stich</H4>
+<B>Ta2,Ta14,Ta15,Ta17:</B> Geber spielt Tarock aus und ist damit sicher der Partner des Spielers. Vorhand sticht in mittlerer H&ouml;he, um damit den Spieler zu schw&auml;chen, der Spieler &uuml;bersticht knapp, der 2. Spieler &uuml;bersticht den Spieler so knapp wie m&ouml;glich.
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,20,16,8,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B,2,3</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,18,10,9,7,6,5,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>13,12,4</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D,B</TD></TR>
+<TR><TD>Karo:</TD><TD>R</TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD>11</TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>K,10,9,7</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>3.Stich</H4>
+<B>KaR,Ta11,Ka3,Ta5:</B>Spieler zwei spielt die von der Vorhand angezeigte Farbe, Karo, aus. Der Geber sticht seine letzte Tarock ein, Vorhand gibt Farbe zu, Spieler 1 l&auml;&szlig;t seinem Partner den Stich.
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,20,16,8,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B,2</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,18,10,9,7,6,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>13,12,4</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D,B</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>K,10,9,7</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>4.Stich</H4>
+<B>PiK,Ta8,Ta9,PiB:</B> Geber kann leider keine Tarock mehr spielen, spielt also den Pik K&ouml;nig um entweder den anderen Spielern Tarock zu ziehen, oder falls der K&ouml;nig sticht gleich noch einmal Pik spielen zu k&ouml;nnen, um so den Spieler zu helfen.
+Vorhand sticht, da dises Farbe das erste Mal gespielt wird, niedrig ein, Spiler 1 &uuml;berstich ihn problemlos, Spieler zwei gibt Farbe zu.
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,20,16,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B,2</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,18,10,7,6,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>13,12,4</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>10,9,7</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>5.Stich</H4>
+<B>Ta18,Ta4,Pi7,Ta20:</B> Spieler 1 spielt Tarock, Spieler 2 kann nur eine niedrige Tarock zugeben, Geber wirft eine unbrauchbare Pik weg, Vorhand sticht. <TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,16,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B,2</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,10,7,6,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>13,12</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>10,9</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>6.Stich</H4>
+<B>Ka2,Ta10,Ta12,Pi9:</B>
+Vorhand spiel wieder Karo, Spieler eins sticht zu niedrig ein, was Spieler 2 erlaubt ihn zu &uuml;berstechen. Der Geber wirft eine weitere Pik weg.  
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,16,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B</TD></TR>
+<TR><TD>Treff:</TD><TD>7</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,6,7,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>13</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3,</TD></TR>
+<TR><TD>Pik:</TD><TD>D</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R,10</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>10</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>K,D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>7.Stich</H4>
+<B>Tr10,TrK,Tr7,Ta6:</B>Spieler zwei hat keine Karo und wei&szlig, das Pik Vorhand Tarock kostet. Spielt er Herz wird Geber mit dem gerufenen K&ouml;nig stechen k&ouml;nnen, also entscheidet er sich f&uuml;r die noch nicht gespielte Treff. Geber sticht  mit dem Treffk&ouml;nig, Vorhand gibt zu, Spieler 1 sticht niedrig.<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>G,16,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B</TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>19,7,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD>13</TD></TR>
+<TR><TD>Herz:</TD><TD>R,3</TD></TR>
+<TR><TD>Pik:</TD><TD>D</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>K,4</TD></TR>
+<TR><TD>Pik:</TD><TD>10</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>8.Stich</H4>
+<B>Ta19,Ta13,He4,TaG:</B>Spieler 1 spielt noch einmal Tarock aus, Spieler 2 gibt zu, der Geber wirf den Herz Vierer weg, Vorhand sticht mit dem Gtie&szlig; ein.
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>16,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD>B</TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>7,P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>R,3</TD></TR>
+<TR><TD>Pik:</TD><TD>D</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>K</TD></TR>
+<TR><TD>Pik:</TD><TD>10</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>D,B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>9.Stich</H4>
+<B>KaB,Ta7,He3,TrD:</B>Vorhand spielt seine letzte Karo aus, Spieler 1 sticht mit Tarock, Spieler 2 gibt niedrig zu w&auml;hrend der Geber die Treffdame schmiert.
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>16,3</TD></TR>
+<TR><TD>Herz:</TD><TD>B</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2><TD></TR>
+<TR><TD>Tarock:</TD><TD>P</TD></TR>
+<TR><TD>Herz:</TD><TD>1,2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>R</TD></TR>
+<TR><TD>Pik:</TD><TD>D</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>K</TD></TR>
+<TR><TD>Pik:</TD><TD>10</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>10.Stich</H4>
+<B>He1,HeR,HeK,HeB:</B>Nun bleibt Spieler 1 nichts mehr anderes &uuml;brig, als Herz auszuspielen. Spieler 2 gibt zu, der Geber sticht mit dem gerufenen K&ouml;nig. Vorhand gibt seine letzte Farbkarte zu, der Besserufer ist also schon gescheitert. 
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>16,3</TD></TR>
+<TR><TD>Herz:</TD><TD></TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD>P</TD></TR>
+<TR><TD>Herz:</TD><TD>2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD></TD></TR>
+<TR><TD>Pik:</TD><TD>D</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD></TD></TR>
+<TR><TD>Pik:</TD><TD>10</TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>11.Stich</H4>
+<B>Pi10,Ta16,TaP,PiD:</B>Der Geber kennt die Verteilung der Tarock nicht, und spielt deswegen die Pik, die Vorhand schon einmal Tarock gekostet hat. Vorhand stich hoch ab - <B>Ta3</B> reicht noch immer um den Pagat zu halten - Spieler 1 mu&szlig den Pagat zugeben, Spieler 2 schmiert die Dame.
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Vorhand<TD></TR>
+<TR><TD>Tarock:</TD><TD>3</TD></TR>
+<TR><TD>Herz:</TD><TD></TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 1<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD>2</TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD></TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR><TD COLSPAN=2>Spieler 2<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD></TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>R</TD></TR>
+</TABLE></TD>
+<TD WIDTH="25%"><TABLE BORDER=2>
+<TR class="aktiv"><TD COLSPAN=2>Geber<TD></TR>
+<TR><TD>Tarock:</TD><TD></TD></TR>
+<TR><TD>Herz:</TD><TD></TD></TR>
+<TR><TD>Pik:</TD><TD></TD></TR>
+<TR><TD>Karo:</TD><TD></TD></TR>
+<TR><TD>Treff:</TD><TD>B</TD></TR>
+</TABLE></TD>
+</TR></TABLE>
+<H4>12.Stich</H4>
+<B>Ta3,He2,TrR,TrB:</B> Vorhand spielt die letzte Tarock aus, die anderen geben ihre verbleibenden Karten zu.
+<H2>Abrechnung</H2>
+<TABLE WIDTH="100%" BORDER=2>
+<TR>
+<TD></TD>
+<TD>Spieler 1 und Geber</TD>
+<TD></TD>
+<TD>Vorhand und Spieler 2</TD>
+<TD></TD>
+</TR>
+<TR><TD>Tarock:</TD>
+<TD>M,11,9,8,7,6,5</TD>
+<TD>6 Punkte 1 Blatt</TD>
+<TD>G,20,19,18,17,16,15,14,13,12,10,4,3,2,P</TD>
+<TD>13 Punkte</TD>
+</TR>
+<TR><TD>Herz:</TD>
+<TD>K,D,R,B,1,3</TD>
+<TD>12 Punkte</TD>
+<TD>2,4</TD>
+<TD>2 Blatt</TD>
+</TR>
+<TR><TD>Pik:</TD>
+<TD>K,R,B</TD>
+<TD>8 Punkte</TD>
+<TD>D,10,9,8,7</TD>
+<TD>4 Punkte 2 Blatt</TD></TR>
+<TR><TD>Karo:</TD>
+<TD>K,D,R,B,1,3,4</TD>
+<TD>12 Punkte 1 Blatt</TD>
+<TD>2</TD>
+<TD>1 Blatt</TD></TR>
+<TR><TD>Treff:</TD>
+<TD>K,D,10,7</TD>
+<TD>8 Punkte 1 Blatt</TD>
+<TD>R,B,9,8</TD>
+<TD>4 Punkte 1 Blatt</TD></TR>
+<TR>
+<TD>Summe:</TD><TD></TD>
+<TD><B>47 Punkte</B></TD><TD></TD><TD><B>23 Punkte</B></TD>
+</TR>
+</TABLE>
+
+
+Obwohl der Spieler und der Geber es nicht geschafft haben, den Pagat Ultimo durchzubringen, haben sie das
+Spiel mit 47 Punkten deutlich gewonnen. Sie haben au&szlig;erdem auch noch alle vier K&ouml;nige in ihren
+Stichen, was zu folgender Abrechnung f&uuml;hrt: 
+<TABLE WIDTH="100%" BORDER=2> 
+<TR><TD><TD COLSPAN=4>Punkte
+<TR><TD WIDTH="10%"><TD WIDTH="18%">Vorhand<TD WIDTH="18%">Spieler 1<TD WIDTH="18%">Spieler
+2<TD WIDTH="18%">Geber
+<TR><TD>Spiel<TD>-2<TD>2<TD>-2<TD>2
+<TR><TD>Pagat<TD>4<TD>-4<TD>4<TD>-4
+<TR><TD>K&ouml;nige<TD>-1<TD>1<TD>-1<TD>1
+<TR><TD>Summe<TD>1<TD>-1   
+<TD>1<TD>-1   
+</TABLE>
+</BODY>
+</HTML>
