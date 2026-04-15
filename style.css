@@ -40,10 +40,20 @@ h4 {
 
 a {
   color: #8B2232;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
+  text-decoration: underline;
+}
+
+.sidebar a,
+.alpha-nav a {
+  text-decoration: none;
+}
+
+.sidebar a:hover,
+.alpha-nav a:hover {
   text-decoration: underline;
 }
 
@@ -145,7 +155,7 @@ body.with-sidebar {
 }
 
 .sidebar .bilder-label {
-  color: #555;
+  color: #333;
   font-size: 0.8rem;
   margin-top: 0.4rem;
   display: block;
@@ -172,4 +182,33 @@ body.with-sidebar {
 main {
   flex: 1;
   min-width: 0;
+}
+
+/* === Karten-Popup === */
+
+.card-popup {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.card-popup img {
+  max-width: 100%;
+}
+
+.card-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.nav-placeholder {
+  visibility: hidden;
+}
+
+/* === Popup-Seiten (Bsp-Dateien) === */
+
+body.popup-page {
+  background: #ffffff;
 }
