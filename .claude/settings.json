@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(git --version)",
+      "Bash(git -C \"c:\\\\Users\\\\Jojo\\\\Documents\\\\RSB\\\\Tarock - Copy\\\\Tarock\" init)",
+      "Bash(powershell -Command \"Get-Command gh -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell -Command \"& 'C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe' --version\")",
+      "Bash(powershell -Command \"& 'C:\\\\Users\\\\Jojo\\\\AppData\\\\Local\\\\GitHub CLI\\\\gh.exe' --version\")",
+      "Bash(powershell -Command \"& 'C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe' auth status\")",
+      "Bash(powershell -Command \"& 'C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe' repo create Tarockregeln --public --description 'Tarockregeln auf Basis von Efelo und der FSTM \\(Königsrufen\\)'\")",
+      "Bash(powershell -Command \"& 'C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe' auth login --web --hostname github.com\")",
+      "Bash(powershell -Command \"Get-Content 'c:\\\\Users\\\\Jojo\\\\Documents\\\\RSB\\\\Tarock - Copy\\\\Tarock\\\\BildG2.html' -Encoding 'iso-8859-1'\")",
+      "Bash(powershell -File \"c:\\\\Users\\\\Jojo\\\\Documents\\\\RSB\\\\Tarock - Copy\\\\Tarock\\\\move_bilder.ps1\")",
+      "Bash(powershell -Command ' *)",
+      "Bash(powershell -File \"c:\\\\Users\\\\Jojo\\\\Documents\\\\RSB\\\\Tarock - Copy\\\\Tarock\\\\fix_bild_links.ps1\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Jojo\\Documents\\RSB\\Tarock - Copy\\Tarock\\.claude"
+    ]
+  }
+}
