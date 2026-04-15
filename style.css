@@ -57,6 +57,11 @@ a:hover {
   text-decoration: underline;
 }
 
+a[name]:not([href]) {
+  text-decoration: none;
+  color: inherit;
+}
+
 ul, ol {
   margin: 0.5rem 0 1rem 1.5rem;
   padding: 0;
@@ -197,10 +202,20 @@ main {
 
 .card-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
   align-items: center;
   margin-top: 1rem;
   font-size: 0.9rem;
+}
+
+.card-nav .close-btn {
+  border: none;
+  padding: 0;
+  display: inline;
+  margin-top: 0;
+  font-size: inherit;
+  background: none;
 }
 
 .nav-placeholder {
