@@ -12,7 +12,7 @@ Danke an Efelo fürs Aufschreiben der ursprünglichen Regeln.
 | `Tarock.html` | Hauptseite: Grundregeln, Glossar und alle Spielvarianten |
 | `faq.html` | Häufig gestellte Fragen |
 | `style.css` | Zentrales Stylesheet für alle Seiten |
-| `Bild*.html` | Popup-Fenster mit Kartenbildern (Gstieß, Mond, Wildsau, Kakadu, Uhu, Pagat) |
+| `karten/Bild*.html` | Popup-Fenster mit Kartenbildern (Gstieß, Mond, Wildsau, Kakadu, Uhu, Pagat) |
 | `Bsp*.html` | Beispielrechnungen (Abrechnung, Lizitation, Spielverlauf) |
 | `bilder/` | Kartenbilder als JPG-Dateien |
 
